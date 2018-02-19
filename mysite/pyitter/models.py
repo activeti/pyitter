@@ -4,11 +4,11 @@ from django.db import models
 
 
 class User (models.Model):
-    name = models.CharField()
-    email = models.CharField()
-    password = models.CharField()
-    salt = models.CharField()
-    bio = models.CharField()
+    name = models.CharField(max_length=30)
+    email = models.TextField()
+    password = models.TextField()
+    salt = models.TextField()
+    bio = models.TextField()
 
 
 class Tweet (models.Model):
