@@ -12,7 +12,7 @@ memo
 データの保存方法を定義する: ER図
 
 ## 画面構成図
-
+![画面構成図(仮)](https://cyllabus-production.s3.amazonaws.com/uploads/course_image/image/3962/12f79290-43dd-43b9-af1b-881963e67635.png)
 ## 画面遷移図
 
 ```puml
@@ -51,3 +51,40 @@ profile --> favorite
 ```
 
 ### ER図
+
+```puml
+entity user {
+    + user_id [PK]
+    ---
+    name
+    email
+    password
+    salt(興味)
+    bio
+}
+entity Tweet {
+    + tweet_id [PK]
+    --
+    # user_id [FK]
+    content
+}
+entity Follow {
+    + follow_id [PK]
+    --
+    # user_id [FK]
+    following_id
+}
+entity Favorite {
+    + Favorite_id [PK]
+    --
+    # tweet_id [FK]
+    # user_id [FK]
+}
+
+user --o{ Tweet
+user -o{ Follow
+user -o{ Favorite
+Tweet -o{ Favorite
+```
+
+EOF
