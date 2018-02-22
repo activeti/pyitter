@@ -1,12 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
 
-class User (models.Model):
-    name = models.CharField(max_length=30)
-    email = models.TextField()
-    password = models.TextField()
+class User (AbstractUser):
     salt = models.TextField()
     bio = models.TextField()
 
@@ -14,6 +12,9 @@ class User (models.Model):
 class Tweet (models.Model):
     user_id = models.ForeignKey(User)
     content = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.content
 
 
 """
