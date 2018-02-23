@@ -1,0 +1,34 @@
+{% extends "pyitter/base.html" %}
+
+{% block content %}
+    <aside class="l-aside">
+        <div class="profilecard">
+            <div class="profile">
+                @{{ request.user.first_name }}
+            </div>
+            <div class="tweet">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form.content}}
+                    <button type="submit">つぶやく</button>
+                    <p>200文字</p>
+                </form>
+            </div>
+        </div>
+    </aside>
+    <main class="l-main">
+        <ul>
+            {% for tweet in tweets %}
+            <li class="d-li">
+                <div class="content_user">{{ tweet.user_id.first_name }}</div>
+                <div class="content">
+                    {{ tweet.content }}
+                </div>
+                <a href="http://">お気に入りに追加</a>
+                <a href="http://">フォロー</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </main>
+{% endblock content %}

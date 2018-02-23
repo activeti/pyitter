@@ -121,3 +121,8 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'pyitter.User'
+
+# Login
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login'

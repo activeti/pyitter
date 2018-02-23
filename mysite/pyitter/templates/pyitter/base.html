@@ -9,69 +9,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Pyitter</title>
 </head>
-<body>
-    <header id="header">
+<body class="l-body">
+    <header class ="l-header" id="header">
         <nav>
         <ul class="nav">
             <li><span id="logo">Pyitter</span></li>
-            <li><a href="http://">タイムライン</a></li>
-            <li><a href="http://">ユーザ一覧</a></li>
-            <li><a href="http://">ユーザ名</a></li>
+            <li><a href="{% url 'tweet_index' %}">タイムライン</a></li>
+            <li><a href="http://">タイムライン(フォロー)</a></li>
+            <li><a href="http://">ユーザ一覧</a></li>
+            <li><a href="http://">プロフィール</a></li>
             <li><a href="http://">設定</a></li>
-            <li><a href="http://">ログアウト</a></li>
+            <li><a href="{% url 'logout'%}">ログアウト</a></li>
         </ul>
     </nav>
     </header>
-    <aside>
-        <div class="profilecard">
-            <div class="profile">
-                山田孝之 @monhan
-            </div>
-            <div class="tubuyaki">
-                <form action="">
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <button type="submit">Submit</button>
-                    <p>140</p>
-                </form>
-            </div>
-        </div>
-    </aside>
-    <main>
-        <ul>
-            <li><div class="content_user">テストユーザ1 @aaaaa</div>
-                <div class="content">ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。
-                </div>
-                <a href="http://">お気に入りに追加</a>
-                <a href="http://">フォロー</a>
-            </li>
-            <li><div class="content_user">テストユーザ1 @aaaaa</div>
-                <div class="content">ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。</div>
-                <a href="http://">お気に入りに追加</a>
-                <a href="http://">フォロー</a>
-            </li>
-            <li><div class="content_user">テストユーザ1 @aaaaa</div>
-                <div class="content">ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。</div>
-                <a href="http://">お気に入りに追加</a>
-                <a href="http://">フォロー</a>
-            </li>
-            <li><div class="content_user">テストユーザ1 @aaaaa</div>
-                <div class="content">ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。</div>
-                <a href="http://">お気に入りに追加</a>
-                <a href="http://">フォロー</a>
-            </li>
-            <li><div class="content_user">テストユーザ1 @aaaaa</div>
-                <div class="content">ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。</div>
-                <a href="http://">お気に入りに追加</a>
-                <a href="http://">フォロー</a>
-            </li>
-            <li><div class="content_user"></div>
-                <div class="content">ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。ここにつぶやきです。</div>
-                <a href="http://">お気に入りに追加</a>
-                <a href="http://">フォロー</a>
-            </li>
-        </ul>
-    </main>
+    {% block content %}
+    {% endblock content %}
 
-    <footer id="footer">© 2018 @activeti</footer>
+    <footer class="l-footer" id="footer">© 2018 @activeti</footer>
 </body>
 </html>
